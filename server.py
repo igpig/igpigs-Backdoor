@@ -102,7 +102,7 @@ while 1 :
   
   
   
-  elif command = "":
+  elif command = "ggg":
     
 
 
