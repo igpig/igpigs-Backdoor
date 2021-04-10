@@ -103,6 +103,7 @@ while 1 :
   
   
   elif command = "ggg":
+      conn.send(comand.encode())
     
 
 
