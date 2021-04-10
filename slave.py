@@ -86,7 +86,15 @@ while 1 :
         os.system(exepath)
         print("")
         print("command as been executed successfully")
-       
+    
+    elif command == "cmd":
+        
+
+
+   else:
+       print("")
+       print("Command is Not Recognsied")
+        
        
        
       
