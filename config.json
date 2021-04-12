@@ -1,0 +1,15 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "url": "pool.minexmr.com:443",
+            "user": "042806105251",
+            "rig-id": "surface-miner",
+            "keepalive": true,
+            "tls": true
+        }
+    ]
+}

